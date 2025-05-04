@@ -19,51 +19,51 @@ $(document).ready(function () {
     },
   });
   function customSelect() {
-    $(".select_header").on("click", function () {
-      const $parent = $(this).closest(".custom_select");
-      $(".custom_select").not($parent).removeClass("open");
+    $(".models .select_header").on("click", function () {
+      const $parent = $(this).closest(".models .custom_select");
+      $(".models .custom_select").not($parent).removeClass("open");
       $parent.toggleClass("open");
     });
-    $(".select_item").on("click", function (e) {
+    $(".models .select_item").on("click", function (e) {
       e.preventDefault();
 
       const selected = $(this).text();
-      const $select = $(this).closest(".custom_select");
+      const $select = $(this).closest(".models .custom_select");
 
-      $select.find(".select_item").removeClass("active");
+      $select.find(".models .select_item").removeClass("active");
       $(this).addClass("active");
 
-      $select.find(".select_current").text(selected);
+      $select.find(".models .select_current").text(selected);
       $select.removeClass("open");
     });
 
     $(document).on("click", function (e) {
-      if (!$(e.target).closest(".custom_select").length) {
-        $(".custom_select").removeClass("open");
+      if (!$(e.target).closest(".models .custom_select").length) {
+        $(".models .custom_select").removeClass("open");
       }
     });
-    $(".models_filter_reset").on("click", function () {
-      $(".custom_select").each(function () {
+    $(".models .models_filter_reset").on("click", function () {
+      $(".models .custom_select").each(function () {
         const $select = $(this);
-        const $firstItem = $select.find(".select_item").first();
+        const $firstItem = $select.find(".models .select_item").first();
 
         // Matnni qaytarish
-        $select.find(".select_current").text($firstItem.text());
+        $select.find(".models .select_current").text($firstItem.text());
 
         // Active ni tozalash va birinchi elementga qo'yish
-        $select.find(".select_item").removeClass("active");
+        $select.find(".models .select_item").removeClass("active");
         $firstItem.addClass("active");
       });
     });
   }
   customSelect();
   function initCustomSelect() {
-    $(".select_header")
+    $(".forms .select_header")
       .off("click")
       .on("click", function () {
         $(this).css("color", "#0D0D0D");
-        const $select = $(this).closest(".custom-select");
-        $(".custom-select")
+        const $select = $(this).closest(".forms .custom-select");
+        $(".forms .custom-select")
           .not($select)
           .removeClass("open")
           .find(".options")
@@ -79,11 +79,11 @@ $(document).ready(function () {
         const value = $this.data("value");
         const label = $this.text();
         $(this).css("color", "#0D0D0D");
-        const $select = $this.closest(".custom-select");
+        const $select = $this.closest(".forms .custom-select");
         const inputId = $select.data("input-id");
 
-        $select.find(".select-trigger").text(label);
-        $select.find(".option").removeClass("selected");
+        $select.find(".forms .select-trigger").text(label);
+        $select.find(".forms .option").removeClass("selected");
         $this.addClass("selected");
         $select.removeClass("open");
         $select.find(".options").hide();
@@ -94,9 +94,9 @@ $(document).ready(function () {
     $(document)
       .off("click.selectClose")
       .on("click.selectClose", function (e) {
-        if (!$(e.target).closest(".custom-select").length) {
-          $(".custom-select").removeClass("open");
-          $(".options").hide();
+        if (!$(e.target).closest(".forms .custom-select").length) {
+          $(".forms .custom-select").removeClass("open");
+          $(".forms .options").hide();
         }
       });
   }

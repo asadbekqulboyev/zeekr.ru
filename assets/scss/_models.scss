@@ -1,8 +1,14 @@
 .models {
   padding-top: 150px;
+  @media (max-width: 768px) {
+    padding-top: 60px;
+  }
   &_top {
     display: flex;
     justify-content: space-between;
+    @media (max-width: 992px) {
+      flex-direction: column;
+    }
   }
   &_filter {
     display: flex;
@@ -11,10 +17,18 @@
     width: 50%;
     gap: 20px 0;
     flex-wrap: wrap;
-
+    @media (max-width: 992px) {
+      width: 100%;
+    }
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
     .custom_select {
       position: relative;
       width: calc(33.33% - 10px);
+      @media (max-width: 768px) {
+        width: 100%;
+      }
     }
     .select_header {
       background: #fff;
@@ -28,7 +42,7 @@
       border: none;
       border-bottom: 1.5px solid #202020;
       padding-bottom: 0;
-      
+
       &_left {
         display: flex;
         gap: 5px;
@@ -60,6 +74,9 @@
       transition: max-height 0.3s ease;
       z-index: 10;
       margin-top: 10px;
+      @media (max-width: 768px) {
+        position: relative;
+      }
       .select_item {
         font-family: "Segoe UI";
         font-size: 16px;
@@ -120,6 +137,9 @@
       margin-left: auto;
       opacity: 0.5;
       transition: all 0.2s linear;
+      @media (max-width: 768px) {
+        margin: 0 auto;
+      }
       &:hover {
         opacity: 1;
       }

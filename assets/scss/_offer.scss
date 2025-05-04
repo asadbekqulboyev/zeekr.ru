@@ -3,6 +3,13 @@
   @media (max-width: 768px) {
     padding-top: 60px;
   }
+  .container {
+    gap: 20px;
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+      gap: 10px 10px;
+    }
+  }
   &_title {
     color: #0d0d0d;
     text-align: center;
@@ -12,6 +19,23 @@
     font-weight: 400;
     line-height: 100%;
     letter-spacing: -1.6px;
+    @media (max-width: 1200px) {
+      font-size: 28px;
+    }
+    @media (max-width: 992px) {
+      font-size: 22px;
+    }
+    @media (max-width: 768px) {
+      color: #0d0d0d;
+      text-align: center;
+      font-family: "Tenor Sans";
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 90%;
+      letter-spacing: -1.2px;
+      width: 100%;
+    }
   }
   .container {
     display: flex;
@@ -22,6 +46,33 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    @media (max-width: 768px) {
+      width: 100%;
+      gap: 10px;
+      &:first-child {
+        width: calc(50% - 5px);
+        align-items: flex-end;
+        order: 1;
+      }
+      &:last-child {
+        width: calc(50% - 5px);
+        align-items: start;
+        order: 2;
+        img:nth-child(1) {
+          width: 50%;
+        }
+        img:nth-child(2) {
+          width: 100%;
+        }
+      }
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
+      img:nth-child(2) {
+        width: 50%;
+      }
+    }
   }
   .check_description {
     display: flex;
@@ -38,6 +89,17 @@
       font-weight: 400;
       line-height: 100%;
       letter-spacing: -0.36px;
+      @media (max-width: 768px) {
+        color: #b5aca5;
+        leading-trim: both;
+        text-edge: cap;
+        font-family: "Segoe UI";
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 100%;
+        letter-spacing: -0.3px;
+      }
     }
   }
   .offer_form_bottom {
@@ -46,16 +108,31 @@
     gap: 10px;
     align-items: center;
     margin-top: 20px;
+    @media (max-width: 768px) {
+      margin-top: 14px;
+    }
     .button {
       background: #f3efec;
+      @media (max-width: 768px) {
+        width: 100%;
+        font-size: 14px;
+        padding: 14px;
+      }
     }
   }
   .offer_form {
     width: 538px;
+    @media (max-width: 768px) {
+      order: 3;
+      width: 100%;
+    }
     .offer_form_inputs {
       position: relative;
       margin-top: 40px;
       display: block;
+      @media (max-width: 768px) {
+        margin-top: 10px;
+      }
     }
     input {
       width: 100%;
@@ -70,6 +147,10 @@
       letter-spacing: -0.48px;
       border-bottom: 1px solid #d2c9c4;
       outline: none;
+      @media (max-width: 768px) {
+        padding-bottom: 10px;
+        font-size: 14px;
+      }
     }
     .tel_title {
       color: #817b77;
@@ -82,6 +163,10 @@
       position: absolute;
       bottom: 20px;
       right: 0;
+      @media (max-width: 768px) {
+        font-size: 14px;
+        bottom: 14px;
+      }
     }
   }
 }
