@@ -1,0 +1,128 @@
+.models {
+  padding-top: 150px;
+  &_top {
+    display: flex;
+    justify-content: space-between;
+  }
+  &_filter {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Tenor Sans";
+    width: 50%;
+    gap: 20px 0;
+    flex-wrap: wrap;
+
+    .custom_select {
+      position: relative;
+      width: calc(33.33% - 10px);
+    }
+    .select_header {
+      background: #fff;
+      padding: 10px 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 5px;
+      outline: 0;
+      border: none;
+      border-bottom: 1.5px solid #202020;
+      padding-bottom: 0;
+      
+      &_left {
+        display: flex;
+        gap: 5px;
+        width: calc(100% - 30px);
+      }
+      .select_current {
+        user-select: none;
+        user-select: none;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 92%;
+        display: block;
+      }
+    }
+    .select_icon {
+      width: 12px;
+      transition: transform 0.3s ease;
+    }
+    .select_body {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-top: none;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      z-index: 10;
+      margin-top: 10px;
+      .select_item {
+        font-family: "Segoe UI";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        position: relative;
+        transition: all 0.2s linear;
+        &:hover {
+          background: #f3efec;
+        }
+        &.active {
+          &::after {
+            content: "";
+            display: block;
+            width: 16px;
+            height: 16px;
+            background: url("../images/check.svg") no-repeat center;
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+    .select_item {
+      display: block;
+      padding: 10.5px 16px;
+      text-decoration: none;
+      color: #0d0d0d;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+    }
+    .select_item:hover {
+      background: #f0f0f0;
+    }
+    .custom_select.open .select_body {
+      max-height: 500px;
+      box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+    .custom_select.open .select_icon {
+      transform: rotate(180deg);
+    }
+    .models_filter_reset {
+      border: none;
+      background: none;
+      font-family: "Segoe UI";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      color: #0d0d0d;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      align-items: center;
+      margin-left: auto;
+      opacity: 0.5;
+      transition: all 0.2s linear;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}

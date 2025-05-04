@@ -1,0 +1,215 @@
+.hero {
+  padding-top: 80px;
+  @media (max-width: 768px) {
+    padding-top: 40px;
+  }
+  .swiper-slide {
+    picture img {
+      width: 100%;
+      object-fit: contain;
+      @media (max-width: 1200px) {
+        width: 130%;
+      }
+      @media (max-width: 992px) {
+        width: 160%;
+        object-fit: cover;
+      }
+      @media (max-width: 768px) {
+        height: 640px;
+      }
+    }
+    picture img {
+      @media (max-width: 768px) {
+        height: 640px;
+        min-width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  &_content {
+    position: absolute;
+    top: 50%;
+    left: 27%;
+    transform: translate(-50%, -50%);
+    @media (max-width: 1200px) {
+      left: 10px;
+      transform: translate(0%, -50%);
+    }
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      transform: translate(0%, 0%);
+      left: 0;
+      top: 40px;
+      padding: 0 20px;
+      height: calc(100% - 100px);
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+  &_top_title {
+    color: #fffcf7;
+    font-family: "Segoe UI";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: 0.12px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+  }
+  &_bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 40px;
+    z-index: 11;
+    width: 100%;
+    left: 0;
+    right: 0;
+    @media (max-width: 768px) {
+      justify-content: center;
+      bottom: 20px;
+      .hero_pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+    }
+    .container {
+      max-width: 1246px;
+    }
+    .btn {
+      border-radius: 50%;
+      border: 1.5px solid #d2c9c4;
+      display: flex;
+      width: 56px;
+      height: 56px;
+      padding: 16px;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+    }
+    .btn_lists {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+    .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      opacity: 1;
+      background: transparent;
+      border: 1.5px solid #fff4e2;
+      flex: 0 0 auto;
+      display: inline-block;
+    }
+    .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      background: #fff4e2;
+    }
+  }
+  &_prices {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    gap: 10px;
+    align-items: center;
+    color: #fff4e2;
+    font-family: "Segoe UI";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    @media (max-width: 768px) {
+      justify-content: center;
+      margin-top: 10px;
+      margin-bottom: 0px;
+      order: 2;
+      font-size: 20px;
+      text-align: center;
+    }
+    span:nth-child(2) {
+      color: rgba(243, 239, 236, 0.5);
+      text-decoration-line: line-through;
+    }
+  }
+  .button {
+    @media (max-width: 768px) {
+      margin: 0 auto;
+      order: 3;
+      width: 100%;
+    }
+  }
+  &_price_lists {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    color: #fff2dd;
+    list-style: none;
+    margin-top: 40px;
+    color: #fff2dd;
+    font-family: "Segoe UI";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.48px;
+    &.mobile {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      order: 2;
+      justify-content: center;
+      margin-top: 20px;
+      font-size: 14px;
+      gap: 5.5px;
+      &.desctop {
+        display: none;
+      }
+      &.mobile {
+        display: flex;
+      }
+    }
+    li {
+      @media (max-width: 768px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+  }
+  h2 {
+    color: #fffcf7;
+    font-family: "Tenor Sans";
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 90%;
+    max-width: 610px;
+    @media (max-width: 768px) {
+      color: #fffcf7;
+      text-align: center;
+      font-family: "Tenor Sans";
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 90%;
+      letter-spacing: -1.8px;
+      order: 1;
+      max-width: 100%;
+    }
+    span {
+      color: #ff6750;
+    }
+  }
+}

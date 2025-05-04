@@ -1,0 +1,87 @@
+.offer {
+  padding-top: 150px;
+  @media (max-width: 768px) {
+    padding-top: 60px;
+  }
+  &_title {
+    color: #0d0d0d;
+    text-align: center;
+    font-family: "Tenor Sans";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -1.6px;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .offer_img {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .check_description {
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
+    .custom_checkbox {
+      flex: 0 0 auto;
+    }
+    p {
+      color: #b5aca5;
+      font-family: "Segoe UI";
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 100%;
+      letter-spacing: -0.36px;
+    }
+  }
+  .offer_form_bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin-top: 20px;
+    .button {
+      background: #f3efec;
+    }
+  }
+  .offer_form {
+    width: 538px;
+    .offer_form_inputs {
+      position: relative;
+      margin-top: 40px;
+      display: block;
+    }
+    input {
+      width: 100%;
+      background: #fff;
+      border: none;
+      padding-bottom: 20px;
+      font-family: "Segoe UI";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 100%;
+      letter-spacing: -0.48px;
+      border-bottom: 1px solid #d2c9c4;
+      outline: none;
+    }
+    .tel_title {
+      color: #817b77;
+      font-family: "Segoe UI";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+      letter-spacing: -0.48px;
+      position: absolute;
+      bottom: 20px;
+      right: 0;
+    }
+  }
+}

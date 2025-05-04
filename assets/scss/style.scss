@@ -1,0 +1,106 @@
+// fonts
+@import url("https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap");
+@import "../fonts/style.css";
+// files
+@import "header.scss";
+@import "hero.scss";
+@import "promotion.scss";
+@import "models.scss";
+@import "forms.scss";
+@import "offer.scss";
+@import "social.scss";
+@import "footer.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #fff;
+  color: #0d0d0d;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+}
+.container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.button {
+  color: #0d0d0d;
+  text-align: center;
+  font-family: "Tenor Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -1px;
+  padding: 16px 20px;
+  background: #fff4e2;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  &.black {
+    background: #0d0d0d;
+    color: #fff;
+    transition: all 0.3s linear;
+    &:hover {
+      background: #ff573d;
+    }
+  }
+}
+.section_title {
+  color: #0d0d0d;
+  font-family: "Tenor Sans";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -2.4px;
+  @media (max-width: 768px) {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+  }
+}
+.custom_checkbox {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background: #f3efec;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.custom_checkbox input {
+  opacity: 1;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.custom_checkbox::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  width: 6px;
+  height: 10px;
+  border: solid #817b77;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+}
+
+.custom_checkbox input:checked ~ .checkmark::after {
+  opacity: 1;
+}
