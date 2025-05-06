@@ -377,6 +377,7 @@
   align-items: center;
   gap: 10px;
   justify-content: center;
+  cursor: pointer;
 }
 .hero_bottom .btn_lists {
   display: flex;
@@ -1613,6 +1614,7 @@
   align-items: center;
   gap: 5px;
   margin-top: 10px;
+  cursor: pointer;
 }
 .forms .form_bottom label .custom_checkbox {
   flex: 0 0 auto;
@@ -1626,9 +1628,19 @@
   line-height: 100%;
   letter-spacing: -0.36px;
 }
+.forms .form_bottom label p a {
+  color: inherit;
+  text-decoration: underline;
+}
 @media (max-width: 992px) {
   .forms .form_bottom button {
     width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .forms .form_bottom button {
+    font-size: 14px;
+    padding: 14px;
   }
 }
 
@@ -2722,6 +2734,138 @@
   background: #d4c8bf;
 }
 
+.modal {
+  background: rgba(243, 239, 236, 0.8);
+  width: 100%;
+  position: fixed;
+  z-index: 222;
+  left: 0;
+  top: 0;
+  height: 100%;
+  padding: 20px 15px;
+  overflow-y: auto;
+  display: none;
+}
+.modal::-webkit-scrollbar {
+  display: none;
+}
+.modal.thanks {
+  display: none;
+}
+@media (max-width: 768px) {
+  .modal.modal_2 .forms_img img {
+    height: 220px;
+    object-fit: contain;
+  }
+}
+.modal .close_modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .modal .close_modal {
+    background: rgba(228, 223, 219, 0.8) !important;
+    top: 0;
+    right: 0;
+  }
+}
+.modal .container {
+  max-width: 994px;
+  background: #fff;
+  padding: 0;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .modal .container {
+    gap: 0;
+  }
+}
+@media (max-width: 768px) {
+  .modal .container .forms_img img {
+    height: 220px;
+    object-fit: cover;
+  }
+}
+@media (max-width: 768px) {
+  .modal .container .section_title {
+    font-size: 36px !important;
+  }
+}
+.modal .container .forms_img {
+  line-height: 0;
+}
+.modal .container .form {
+  padding: 40px 40px 40px 20px;
+}
+@media (max-width: 768px) {
+  .modal .container .form {
+    padding: 20px 10px;
+  }
+}
+.modal .container .form .section_title {
+  font-size: 48px;
+}
+.modal .thanks_content {
+  width: calc(100% - 20px);
+  max-width: 497px;
+  background: #fff;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: fit-content;
+  margin: auto;
+}
+.modal .thanks_content .close_modal {
+  background: #fff;
+}
+.modal .thanks_content .section_title {
+  color: #0d0d0d;
+  text-align: center;
+  font-family: "Tenor Sans";
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90%;
+  letter-spacing: -3.2px;
+}
+@media (max-width: 768px) {
+  .modal .thanks_content .section_title {
+    font-size: 36px;
+  }
+}
+.modal .thanks_content .modal_description {
+  color: #0d0d0d;
+  text-align: center;
+  font-family: "Tenor Sans";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -0.96px;
+  margin-top: 10px;
+}
+@media (max-width: 768px) {
+  .modal .thanks_content .modal_description {
+    font-size: 16px;
+  }
+}
+.modal .thanks_content .button {
+  margin-top: 20px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -2792,34 +2936,43 @@ body {
 
 .custom_checkbox {
   position: relative;
+  display: inline-block;
   width: 24px;
   height: 24px;
-  background: #f3efec;
-  cursor: pointer;
-  display: inline-block;
 }
 
 .custom_checkbox input {
-  opacity: 1;
+  opacity: 0;
   width: 0;
   height: 0;
   position: absolute;
 }
 
-.custom_checkbox::after {
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background-color: #f3efec;
+  cursor: pointer;
+}
+
+.checkmark::after {
   content: "";
   position: absolute;
-  top: 2px;
-  left: 4px;
+  left: 8px;
+  top: 3px;
   width: 6px;
-  height: 10px;
+  height: 12px;
   border: solid #817b77;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
   opacity: 0;
+  transition: 0.2s ease;
 }
 
-.custom_checkbox input:checked ~ .checkmark::after {
+.custom_checkbox input:checked + .checkmark::after {
   opacity: 1;
 }
 

@@ -11,6 +11,7 @@
 @import "social.scss";
 @import "contact.scss";
 @import "footer.scss";
+@import "modal.scss";
 
 * {
   margin: 0;
@@ -75,36 +76,46 @@ body {
 }
 .custom_checkbox {
   position: relative;
+  display: inline-block;
   width: 24px;
   height: 24px;
-  background: #f3efec;
-  cursor: pointer;
-  display: inline-block;
 }
 
 .custom_checkbox input {
-  opacity: 1;
+  opacity: 0;
   width: 0;
   height: 0;
   position: absolute;
 }
 
-.custom_checkbox::after {
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background-color: #f3efec;
+  cursor: pointer;
+}
+
+.checkmark::after {
   content: "";
   position: absolute;
-  top: 2px;
-  left: 4px;
+  left: 8px;
+  top: 3px;
   width: 6px;
-  height: 10px;
+  height: 12px;
   border: solid #817b77;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
   opacity: 0;
+  transition: 0.2s ease;
 }
 
-.custom_checkbox input:checked ~ .checkmark::after {
+.custom_checkbox input:checked + .checkmark::after {
   opacity: 1;
 }
+
 .fancybox__container {
   z-index: 100000 !important;
 }

@@ -285,4 +285,24 @@ $(document).ready(function () {
       $block.fadeOut(200);
     });
   });
+  $(".close_modal").on("click", function () {
+    $(".modal").fadeOut(200);
+  });
+  $(".modal_1 button").click(function (e) {
+    e.preventDefault();
+    $(".modal").fadeOut(200);
+    $(".modal.thanks.thanks_1").fadeIn(200);
+  });
+
+  $(".modal_2 button").click(function (e) {
+    e.preventDefault();
+    $(".modal").fadeOut(200);
+    $(".modal.thanks.thanks_2").fadeIn(200);
+  });
+  $(".open_modal").click(function () {
+    $(".modal_1").fadeIn(200);
+  });
+  $(".open_modal_2").click(function () {
+    $(".modal_2").fadeIn(200);
+  });
 });
