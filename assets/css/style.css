@@ -1918,7 +1918,7 @@
 @media (max-width: 768px) {
   .social .socials::after {
     bottom: 0;
-    top: 67px;
+    top: 57px;
     margin: auto;
     left: 0;
     right: 0;
@@ -1969,22 +1969,37 @@
   text-decoration: none;
   width: 80px;
   flex: 0 0 auto;
+  transition: all 0.2s linear;
+}
+.social .icon:hover .label {
+  color: #ff573d;
 }
 @media (max-width: 768px) {
   .social .icon {
     width: calc(50% - 5px);
     padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 }
 .social .icon img {
   width: 56px;
   height: 56px;
 }
+@media (max-width: 768px) {
+  .social .icon img {
+    width: 40px;
+    height: 40px;
+  }
+}
 .social .label {
   display: block;
   margin-top: 5px;
   font-size: 14px;
   color: black;
+  transition: all 0.2s linear;
 }
 .social .qr-section {
   text-align: center;
@@ -2596,6 +2611,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    gap: 0;
     padding-bottom: 20px;
     border-bottom: 1px solid rgba(181, 172, 165, 0.4862745098);
   }
@@ -2606,6 +2622,13 @@
     width: 100%;
     align-items: center;
   }
+}
+@media (max-width: 768px) and (max-width: 768px) {
+  .footer_links.mobile .button_lists {
+    margin-top: 30px;
+  }
+}
+@media (max-width: 768px) {
   .footer_links.mobile .button_lists .button {
     max-width: 272px;
     width: 100%;
@@ -2627,6 +2650,12 @@
     width: 45%;
   }
 }
+@media (max-width: 768px) {
+  .footer_item {
+    width: 50%;
+    padding-left: 20px;
+  }
+}
 .footer_item:nth-child(1) {
   padding-left: 20px;
   border-left: 1px solid #b5aca5;
@@ -2635,6 +2664,21 @@
   .footer_item:nth-child(1) {
     padding-left: 0;
     border: 0;
+  }
+}
+@media (max-width: 768px) {
+  .footer_item:nth-child(1) {
+    padding-left: 20px;
+    position: relative;
+  }
+  .footer_item:nth-child(1)::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background: rgba(181, 172, 165, 0.4862745098);
+    right: 0;
+    top: 0;
   }
 }
 @media (max-width: 1200px) {
@@ -2685,9 +2729,24 @@
 .footer_item_component a:hover {
   color: #ef472d;
 }
+.footer_item_component.child2 {
+  position: relative;
+}
 @media (max-width: 768px) {
   .footer_item_component.child2 {
-    border-right: 1px solid rgba(181, 172, 165, 0.4862745098);
+    width: 50%;
+  }
+  .footer_item_component.child2 ul {
+    width: 60%;
+  }
+  .footer_item_component.child2::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background: rgba(181, 172, 165, 0.4862745098);
+    right: 0;
+    top: 0;
   }
 }
 .footer_item_component.child2 ul {

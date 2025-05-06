@@ -221,12 +221,16 @@
         display: flex;
         flex-wrap: wrap;
         width: 100%;
+        gap: 0;
         .button_lists {
           display: flex;
           flex-direction: column;
           gap: 5px;
           width: 100%;
           align-items: center;
+          @media (max-width: 768px) {
+            margin-top: 30px;
+          }
           .button {
             max-width: 272px;
             width: 100%;
@@ -250,12 +254,31 @@
     @media (max-width: 1200px) {
       width: 45%;
     }
+
+    @media (max-width: 768px) {
+      width: 50%;
+      padding-left: 20px;
+    }
     &:nth-child(1) {
       padding-left: 20px;
       border-left: 1px solid #b5aca5;
       @media (max-width: 1200px) {
         padding-left: 0;
         border: 0;
+      }
+      @media (max-width: 768px) {
+        padding-left: 20px;
+
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          height: 100%;
+          width: 1px;
+          background: rgba(181, 172, 165, 0.4862745098);
+          right: 0;
+          top: 0;
+        }
       }
     }
     &:nth-child(3) {
@@ -302,8 +325,21 @@
         }
       }
       &.child2 {
+        position: relative;
         @media (max-width: 768px) {
-          border-right: 1px solid #b5aca57c;
+          width: 50%;
+          ul {
+            width: 60%;
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 1px;
+            background: #b5aca57c;
+            right: 0;
+            top: 0;
+          }
         }
         ul {
           flex-wrap: wrap;
