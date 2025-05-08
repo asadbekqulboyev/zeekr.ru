@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Новые ZEEKR в наличии по ценам прошлого года!</title>
     <link
+      href="https://cdn.jsdelivr.net/npm/slim-select@2.6.0/dist/slimselect.min.css"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
@@ -26,16 +30,16 @@
             <span></span>
             <span></span>
           </div>
+          <div class="exit_menu">
+            <img src="assets/images/exit_menu.svg" alt="" />
+          </div>
           <div class="header__mobile">
-            <div class="exit_menu">
-              <img src="assets/images/exit_menu.svg" alt="" />
-            </div>
             <nav class="header__nav">
               <ul class="header__list">
-                <li><a href="#">Модельный ряд</a></li>
-                <li><a href="#">Акции</a></li>
-                <li><a href="#">Трейд-ин</a></li>
-                <li><a href="#">Контакты</a></li>
+                <li><a href="#models">Модельный ряд</a></li>
+                <li><a href="#offer">Акции</a></li>
+                <li><a href="#forms">Трейд-ин</a></li>
+                <li><a href="#contact">Контакты</a></li>
               </ul>
             </nav>
             <ul class="header__social">
@@ -68,6 +72,10 @@
                 </div>
               </div>
               <p class="header__raiting_text">Рейтинг организации в Яндексе</p>
+            </div>
+            <div class="header__raiting mobile">
+              <a href="tel:+79990009900" class="button"> +7 999 000 99 00 </a>
+              <a href="#" class="button black open_modal"> Заказать звонок </a>
             </div>
             <div class="header__mobile_bottom">
               © 2025 Peleton, все права защищены
@@ -278,7 +286,7 @@
                 <div class="promotion_content">
                   <div class="promotion_content_top">
                     <h4 class="promotion_title">
-                      Бонус за кредит до 400 000 ₽
+                      Бонус за кредит до 400&nbsp;000 ₽
                     </h4>
                     <div class="promotion_btn">Можно без первого взноса</div>
                   </div>
@@ -307,68 +315,68 @@
           </div>
         </section>
         <!-- Модельный ряд -->
-        <section class="models">
+        <section class="models" id="models">
           <div class="container">
             <div class="models_top">
               <h2 class="section_title">Модельный ряд</h2>
               <form class="models_filter">
                 <!-- MODELS -->
-                <div class="custom_select">
-                  <div class="select_header">
-                    <span class="select_current">Все модели</span>
+
+                <div class="custom_select slimSelect">
+                  <select class="select_body filter_select">
+                    <option class="select_item active">Все модели</option>
+                    <option class="select_item">Zeekr 001</option>
+                    <option class="select_item">Zeekr X</option>
+                    <option class="select_item">Zeekr 007</option>
+                    <option class="select_item">Zeekr 7X</option>
+                  </select>
+                  <div class="select_header_right">
                     <img
                       src="assets/images/select_arrow.svg"
                       class="select_icon"
                       alt="icon"
                     />
-                  </div>
-                  <div class="select_body">
-                    <a href="#" class="select_item active">Все модели</a>
-                    <a href="#" class="select_item">Zeekr 001</a>
-                    <a href="#" class="select_item">Zeekr X</a>
-                    <a href="#" class="select_item">Zeekr 007</a>
-                    <a href="#" class="select_item">Zeekr 7X</a>
                   </div>
                 </div>
                 <!-- CATEGORIES -->
-                <div class="custom_select">
-                  <div class="select_header">
-                    <span class="select_current">Все категории</span>
+                <div class="custom_select slimSelect">
+                  <select class="select_body filter_select">
+                    <option class="select_item active">Все категории</option>
+                    <option class="select_item">Новые</option>
+                    <option class="select_item">С пробегом</option>
+                  </select>
+                  <div class="select_header_right">
                     <img
                       src="assets/images/select_arrow.svg"
                       class="select_icon"
                       alt="icon"
                     />
-                  </div>
-                  <div class="select_body">
-                    <a href="#" class="select_item active">Все категории</a>
-                    <a href="#" class="select_item">Новые</a>
-                    <a href="#" class="select_item">С пробегом</a>
                   </div>
                 </div>
                 <!-- SORTING -->
-                <div class="custom_select">
-                  <div class="select_header">
-                    <div class="select_header_left">
-                      <img src="assets/images/sort_arrow.svg" alt="icon" />
-                      <span class="select_current">По умолчанию</span>
-                    </div>
+                <div class="custom_select slimSelect">
+                  <img
+                    src="assets/images/sort_arrow.svg"
+                    alt="icon"
+                    class="fil_icon"
+                  />
+                  <select class="select_body filter_select end">
+                    <option class="select_item active">По умолчанию</option>
+                    <option class="select_item">По возрастанию цены</option>
+                    <option class="select_item">По убыванию цены</option>
+                    <option class="select_item">По дате</option>
+                    <option class="select_item">По году выпуска</option>
+                    <option class="select_item">По пробегу</option>
+                  </select>
+                  <div class="select_header_right">
                     <img
                       src="assets/images/select_arrow.svg"
                       class="select_icon"
                       alt="icon"
                     />
                   </div>
-                  <div class="select_body">
-                    <a href="#" class="select_item active">По умолчанию</a>
-                    <a href="#" class="select_item">По возрастанию цены</a>
-                    <a href="#" class="select_item">По убыванию цены</a>
-                    <a href="#" class="select_item">По дате</a>
-                    <a href="#" class="select_item">По году выпуска</a>
-                    <a href="#" class="select_item">По пробегу</a>
-                  </div>
                 </div>
-                <button class="models_filter_reset">
+                <button type="reset" class="models_filter_reset">
                   <span>Сбросить все</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -482,7 +490,7 @@
                         </svg>
                       </a>
                     </div>
-                    <div class="swiper modesl_gallery_pagination">
+                    <div class="swiper models_gallery_pagination">
                       <div class="swiper-wrapper">
                         <div class="swiper-slide">
                           <img src="assets/images/model_img1.png" />
@@ -662,7 +670,12 @@
                     <a href="#" class="button black open_modal_2"
                       >Получить предложение
                     </a>
-                    <a href="#" class="button">Записаться на тест-драйв</a>
+                    <a
+                      href="/assets/images/model_img1.png"
+                      class="button"
+                      data-fancybox="image1"
+                      >Записаться на тест-драйв</a
+                    >
                   </div>
                 </div>
               </div>
@@ -755,7 +768,7 @@
                         </svg>
                       </a>
                     </div>
-                    <div class="swiper modesl_gallery_pagination">
+                    <div class="swiper models_gallery_pagination">
                       <div class="swiper-wrapper">
                         <div class="swiper-slide">
                           <img src="assets/images/model_img2.png" />
@@ -938,7 +951,12 @@
                     <a href="#" class="button black open_modal_2"
                       >Получить предложение
                     </a>
-                    <a href="#" class="button">Записаться на тест-драйв</a>
+                    <a
+                      href="/assets/images/model_img2.png"
+                      class="button"
+                      data-fancybox="image2"
+                      >Записаться на тест-драйв</a
+                    >
                   </div>
                 </div>
               </div>
@@ -1033,7 +1051,7 @@
                         </svg>
                       </a>
                     </div>
-                    <div class="swiper modesl_gallery_pagination">
+                    <div class="swiper models_gallery_pagination">
                       <div class="swiper-wrapper">
                         <div class="swiper-slide">
                           <img src="assets/images/model_img1.png" />
@@ -1216,7 +1234,12 @@
                     <a href="#" class="button black open_modal_2"
                       >Получить предложение
                     </a>
-                    <a href="#" class="button">Записаться на тест-драйв</a>
+                    <a
+                      href="/assets/images/model_img3.png"
+                      class="button"
+                      data-fancybox="image3"
+                      >Записаться на тест-драйв</a
+                    >
                   </div>
                 </div>
               </div>
@@ -1311,7 +1334,7 @@
                         </svg>
                       </a>
                     </div>
-                    <div class="swiper modesl_gallery_pagination">
+                    <div class="swiper models_gallery_pagination">
                       <div class="swiper-wrapper">
                         <div class="swiper-slide">
                           <img src="assets/images/model_img2.png" />
@@ -1494,7 +1517,578 @@
                     <a href="#" class="button black open_modal_2"
                       >Получить предложение
                     </a>
-                    <a href="#" class="button">Записаться на тест-драйв</a>
+                    <a
+                      href="/assets/images/model_img4.png"
+                      class="button"
+                      data-fancybox="image4"
+                      >Записаться на тест-драйв</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="models_item">
+                <span class="tag" style="background: #eee; color: #a28f80"
+                  >С пробегом</span
+                >
+                <div class="models_item_top">
+                  <!-- Swiper asosiy rasm -->
+                  <div class="swiper models_img">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <img src="assets/images/model_img3.png" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="assets/images/model_img1.png" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="assets/images/model_img2.png" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="assets/images/model_img4.png" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="assets/images/model_img4.png" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="assets/images/model_img3.png" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="assets/images/model_img4.png" />
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Swiper thumb (kichik rasmlar) -->
+                  <div class="models_item_navigator">
+                    <div class="models_left">
+                      <div class="model_slide_btnlists">
+                        <div class="btn models_prev">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                          >
+                            <path
+                              d="M14 17L8 12L14 7"
+                              stroke="#0D0D0D"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </div>
+                        <div class="btn models_next">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                          >
+                            <path
+                              d="M10 7L16 12L10 17"
+                              stroke="#0D0D0D"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <a
+                        data-fancybox="models_3"
+                        class="btn content_btn"
+                        href="assets/images/model_img3.png  "
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M10.7988 3.89844C14.6094 3.89865 17.6982 6.98819 17.6982 10.7988C17.698 14.6093 14.6093 17.698 10.7988 17.6982C6.98819 17.6982 3.89865 14.6094 3.89844 10.7988C3.89844 6.98806 6.98806 3.89844 10.7988 3.89844ZM10.3662 19.1875L10.7988 19.1982C12.8472 19.1981 14.7244 18.4649 16.1821 17.2465L19.8652 20.9297L19.9219 20.9814C20.2165 21.2216 20.6512 21.2042 20.9258 20.9297C21.2003 20.6551 21.2177 20.2204 20.9775 19.9258L20.9258 19.8691L17.243 16.1864C18.3774 14.831 19.0922 13.1125 19.1875 11.2305L19.1982 10.7988C19.1982 6.30453 15.6689 2.63404 11.2305 2.40918L10.7988 2.39844C6.15964 2.39844 2.39844 6.15964 2.39844 10.7988L2.40918 11.2305C2.62679 15.5257 6.07098 18.9698 10.3662 19.1875ZM10.0469 10.0469V7.19922C10.0469 6.78501 10.3827 6.44922 10.7969 6.44922C11.2111 6.44922 11.5469 6.78501 11.5469 7.19922V10.0469H14.3984C14.8127 10.0469 15.1484 10.3827 15.1484 10.7969C15.1484 11.2111 14.8127 11.5469 14.3984 11.5469H11.5469V14.3994C11.5468 14.8135 11.211 15.1494 10.7969 15.1494C10.3827 15.1494 10.047 14.8135 10.0469 14.3994V11.5469H7.19824C6.78412 11.5468 6.44824 11.211 6.44824 10.7969C6.44824 10.3827 6.78412 10.047 7.19824 10.0469H10.0469Z"
+                            fill="#0D0D0D"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="swiper models_gallery_pagination">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <img src="assets/images/model_img1.png" />
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="assets/images/model_img2.png" />
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="assets/images/model_img3.png" />
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="assets/images/model_img4.png" />
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="assets/images/model_img3.png" />
+                        </div>
+                        <div class="swiper-slide has_overlay">
+                          <img src="assets/images/model_img4.png" />
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="assets/images/model_img2.png" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="models_pagination"></div>
+                </div>
+                <div class="models_item_body">
+                  <div class="characteristic_content">
+                    <div class="tabs_header">
+                      <div class="tabs">
+                        <button class="tab active" data-tab="characteristics">
+                          Основные характеристики
+                        </button>
+                        <button class="tab" data-tab="equipment">
+                          Комплектация ME Edition
+                        </button>
+                      </div>
+                      <div class="exit_caracteristic">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="17"
+                          viewBox="0 0 16 17"
+                          fill="none"
+                        >
+                          <g clip-path="url(#clip0_17069_16233)">
+                            <path
+                              d="M14.1884 1.97946C14.4813 2.27236 14.4813 2.74723 14.1884 3.04012L9.06123 8.16734L14.1884 13.2946C14.4813 13.5875 14.4813 14.0623 14.1884 14.3552C13.8956 14.648 13.4207 14.648 13.1278 14.3552L8.00057 9.228L2.87474 14.3538C2.58184 14.6467 2.10697 14.6467 1.81408 14.3538C1.52121 14.0609 1.5212 13.5861 1.81408 13.2932L6.93991 8.16734L1.81408 3.0415C1.52121 2.74864 1.52127 2.27374 1.81408 1.98084C2.10697 1.68795 2.58184 1.68795 2.87474 1.98084L8.00057 7.10668L13.1278 1.97946C13.4207 1.68658 13.8956 1.6866 14.1884 1.97946Z"
+                              fill="#817B77"
+                            />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_17069_16233">
+                              <rect
+                                width="16"
+                                height="16"
+                                fill="white"
+                                transform="translate(0 0.167969)"
+                              />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="tab-content" id="characteristics">
+                      <h4>ZEEKR X, 2024</h4>
+                      <h2>Основные характеристики</h2>
+                      <p>
+                        Разгон до 100 км/ч за 3.7 секунды. Аудиосистема Premium
+                        YAMAHA Surround Stereo, 20 кованые диски, Датчики сдвиж.
+                        Камера 360, Адаптивный круиз-контроль,
+                        Интеллектуально-индукционное, автоматическое открывание
+                        дверей. Smart климат-контроль, Сиденья с функцией
+                        интеллектуального массажа, Панорамная крыша
+                      </p>
+                      <div class="info-table">
+                        <div><span>Статус</span><span>В наличии</span></div>
+                        <div><span>Год выпуска</span><span>2024</span></div>
+                        <div><span>Пробег</span><span>0 км</span></div>
+                        <div>
+                          <span>Кузов</span><span>Внедорожник 5 дв.</span>
+                        </div>
+                        <div><span>Комплектация</span><span>Импорт</span></div>
+                        <div>
+                          <span>Двигатель</span
+                          ><span>428 л.с. / 315 кВт / электромотор</span>
+                        </div>
+                        <div>
+                          <span>Цвет</span><span>Красный металлик</span>
+                        </div>
+                        <div><span>Привод</span><span>Полный</span></div>
+                        <div><span>Запас хода</span><span>620 км</span></div>
+                      </div>
+                    </div>
+                    <div class="tab-content" hidden id="equipment">
+                      <h4>ZEEKR X, 2024</h4>
+                      <h2>Комплектация ME Edition</h2>
+                      <div class="info-table">
+                        <h3>Безопасность</h3>
+                        <ul>
+                          <li>Подушка безопасности водителя</li>
+                          <li>Подушка безопасности пассажира</li>
+                          <li>Подушки безопасности боковые</li>
+                          <li>Подушки безопасности оконные (шторки)</li>
+                          <li>Система предотвращения столкновения</li>
+                          <li>Система контроля за полосой движения</li>
+                          <li>Датчик усталости водителя</li>
+                          <li>Антипробуксовочная система (ASR)</li>
+                          <li>Система помощи при торможении (BAS, EBD)</li>
+                          <li>Система помощи при старте в гору (HSA)</li>
+                          <li>Система контроля слепых зон</li>
+                          <li>Датчик давления в шинах</li>
+                          <li>Антиблокировочная система (ABS)</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="models_body_top">
+                    <div class="models_sm_title">
+                      <span>Комплектация ME Edition</span>
+                      <img src="assets/images/info_icon.svg" alt="" />
+                    </div>
+                    <div class="models_bodys_content">
+                      <h3 class="models_title">Zeekr 007 870 kWh, 2024</h3>
+                      <div class="color_img">
+                        <div
+                          class="color_item"
+                          style="background-color: #586461"
+                        ></div>
+                        <div
+                          class="color_item"
+                          style="background-color: #393a3c"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="models_item_content">
+                    <div class="models_item_tags">
+                      <span class="tag">Общая выгода до 150 000 ₽</span>
+                      <span class="tag">Гарантия 2 года</span>
+                      <span class="tag">Передача аккаунта</span>
+                      <span class="tag">18.6 кВт/ч/100 км</span>
+                    </div>
+                    <div class="price_lists">
+                      <div class="price_left">
+                        <span class="new_price">от 6 000 000 ₽</span>
+                        <span class="old_price">7 500 000 ₽</span>
+                      </div>
+                      <div class="info_price">
+                        <span>Смотреть основные хар-ки</span>
+                        <div class="infos">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="22"
+                            height="22"
+                            viewBox="0 0 22 22"
+                            fill="none"
+                          >
+                            <path
+                              d="M11 21C16.5228 21 21 16.5228 21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21Z"
+                              stroke="#0D0D0D"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M11 15V11M11 7H11.01"
+                              stroke="#0D0D0D"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="button_lists">
+                    <a href="#" class="button black open_modal_2"
+                      >Получить предложение
+                    </a>
+                    <a
+                      href="/assets/images/model_img3.png"
+                      class="button"
+                      data-fancybox="image5"
+                      >Записаться на тест-драйв</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="models_item">
+                <span class="tag" style="background: #eee; color: #a28f80"
+                  >С пробегом</span
+                >
+                <div class="models_item_top">
+                  <!-- Swiper asosiy rasm -->
+                  <div class="swiper models_img">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <img src="assets/images/model_img4.png" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="assets/images/model_img2.png" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="assets/images/model_img1.png" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="assets/images/model_img3.png" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="assets/images/model_img4.png" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="assets/images/model_img3.png" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="assets/images/model_img4.png" />
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Swiper thumb (kichik rasmlar) -->
+                  <div class="models_item_navigator">
+                    <div class="models_left">
+                      <div class="model_slide_btnlists">
+                        <div class="btn models_prev">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                          >
+                            <path
+                              d="M14 17L8 12L14 7"
+                              stroke="#0D0D0D"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </div>
+                        <div class="btn models_next">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                          >
+                            <path
+                              d="M10 7L16 12L10 17"
+                              stroke="#0D0D0D"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <a
+                        data-fancybox="models_4"
+                        class="btn content_btn"
+                        href="assets/images/model_img4.png"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M10.7988 3.89844C14.6094 3.89865 17.6982 6.98819 17.6982 10.7988C17.698 14.6093 14.6093 17.698 10.7988 17.6982C6.98819 17.6982 3.89865 14.6094 3.89844 10.7988C3.89844 6.98806 6.98806 3.89844 10.7988 3.89844ZM10.3662 19.1875L10.7988 19.1982C12.8472 19.1981 14.7244 18.4649 16.1821 17.2465L19.8652 20.9297L19.9219 20.9814C20.2165 21.2216 20.6512 21.2042 20.9258 20.9297C21.2003 20.6551 21.2177 20.2204 20.9775 19.9258L20.9258 19.8691L17.243 16.1864C18.3774 14.831 19.0922 13.1125 19.1875 11.2305L19.1982 10.7988C19.1982 6.30453 15.6689 2.63404 11.2305 2.40918L10.7988 2.39844C6.15964 2.39844 2.39844 6.15964 2.39844 10.7988L2.40918 11.2305C2.62679 15.5257 6.07098 18.9698 10.3662 19.1875ZM10.0469 10.0469V7.19922C10.0469 6.78501 10.3827 6.44922 10.7969 6.44922C11.2111 6.44922 11.5469 6.78501 11.5469 7.19922V10.0469H14.3984C14.8127 10.0469 15.1484 10.3827 15.1484 10.7969C15.1484 11.2111 14.8127 11.5469 14.3984 11.5469H11.5469V14.3994C11.5468 14.8135 11.211 15.1494 10.7969 15.1494C10.3827 15.1494 10.047 14.8135 10.0469 14.3994V11.5469H7.19824C6.78412 11.5468 6.44824 11.211 6.44824 10.7969C6.44824 10.3827 6.78412 10.047 7.19824 10.0469H10.0469Z"
+                            fill="#0D0D0D"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="swiper models_gallery_pagination">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <img src="assets/images/model_img2.png" />
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="assets/images/model_img1.png" />
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="assets/images/model_img3.png" />
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="assets/images/model_img4.png" />
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="assets/images/model_img3.png" />
+                        </div>
+                        <div class="swiper-slide has_overlay">
+                          <img src="assets/images/model_img4.png" />
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="assets/images/model_img2.png" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="models_pagination"></div>
+                </div>
+                <div class="models_item_body">
+                  <div class="characteristic_content">
+                    <div class="tabs_header">
+                      <div class="tabs">
+                        <button class="tab active" data-tab="characteristics">
+                          Основные характеристики
+                        </button>
+                        <button class="tab" data-tab="equipment">
+                          Комплектация ME Edition
+                        </button>
+                      </div>
+                      <div class="exit_caracteristic">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="17"
+                          viewBox="0 0 16 17"
+                          fill="none"
+                        >
+                          <g clip-path="url(#clip0_17069_16233)">
+                            <path
+                              d="M14.1884 1.97946C14.4813 2.27236 14.4813 2.74723 14.1884 3.04012L9.06123 8.16734L14.1884 13.2946C14.4813 13.5875 14.4813 14.0623 14.1884 14.3552C13.8956 14.648 13.4207 14.648 13.1278 14.3552L8.00057 9.228L2.87474 14.3538C2.58184 14.6467 2.10697 14.6467 1.81408 14.3538C1.52121 14.0609 1.5212 13.5861 1.81408 13.2932L6.93991 8.16734L1.81408 3.0415C1.52121 2.74864 1.52127 2.27374 1.81408 1.98084C2.10697 1.68795 2.58184 1.68795 2.87474 1.98084L8.00057 7.10668L13.1278 1.97946C13.4207 1.68658 13.8956 1.6866 14.1884 1.97946Z"
+                              fill="#817B77"
+                            />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_17069_16233">
+                              <rect
+                                width="16"
+                                height="16"
+                                fill="white"
+                                transform="translate(0 0.167969)"
+                              />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="tab-content" id="characteristics">
+                      <h4>ZEEKR X, 2024</h4>
+                      <h2>Основные характеристики</h2>
+                      <p>
+                        Разгон до 100 км/ч за 3.7 секунды. Аудиосистема Premium
+                        YAMAHA Surround Stereo, 20 кованые диски, Датчики сдвиж.
+                        Камера 360, Адаптивный круиз-контроль,
+                        Интеллектуально-индукционное, автоматическое открывание
+                        дверей. Smart климат-контроль, Сиденья с функцией
+                        интеллектуального массажа, Панорамная крыша
+                      </p>
+                      <div class="info-table">
+                        <div><span>Статус</span><span>В наличии</span></div>
+                        <div><span>Год выпуска</span><span>2024</span></div>
+                        <div><span>Пробег</span><span>0 км</span></div>
+                        <div>
+                          <span>Кузов</span><span>Внедорожник 5 дв.</span>
+                        </div>
+                        <div><span>Комплектация</span><span>Импорт</span></div>
+                        <div>
+                          <span>Двигатель</span
+                          ><span>428 л.с. / 315 кВт / электромотор</span>
+                        </div>
+                        <div>
+                          <span>Цвет</span><span>Красный металлик</span>
+                        </div>
+                        <div><span>Привод</span><span>Полный</span></div>
+                        <div><span>Запас хода</span><span>620 км</span></div>
+                      </div>
+                    </div>
+                    <div class="tab-content" hidden id="equipment">
+                      <h4>ZEEKR X, 2024</h4>
+                      <h2>Комплектация ME Edition</h2>
+                      <div class="info-table">
+                        <h3>Безопасность</h3>
+                        <ul>
+                          <li>Подушка безопасности водителя</li>
+                          <li>Подушка безопасности пассажира</li>
+                          <li>Подушки безопасности боковые</li>
+                          <li>Подушки безопасности оконные (шторки)</li>
+                          <li>Система предотвращения столкновения</li>
+                          <li>Система контроля за полосой движения</li>
+                          <li>Датчик усталости водителя</li>
+                          <li>Антипробуксовочная система (ASR)</li>
+                          <li>Система помощи при торможении (BAS, EBD)</li>
+                          <li>Система помощи при старте в гору (HSA)</li>
+                          <li>Система контроля слепых зон</li>
+                          <li>Датчик давления в шинах</li>
+                          <li>Антиблокировочная система (ABS)</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="models_body_top">
+                    <div class="models_sm_title">
+                      <span>Комплектация ME Edition</span>
+                      <img src="assets/images/info_icon.svg" alt="" />
+                    </div>
+                    <div class="models_bodys_content">
+                      <h3 class="models_title">Zeekr X, 2024</h3>
+                      <div class="color_img">
+                        <div
+                          class="color_item"
+                          style="background-color: #262626"
+                        ></div>
+                        <div
+                          class="color_item"
+                          style="background-color: #7e7e7e"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="models_item_content">
+                    <div class="models_item_tags">
+                      <span class="tag">Общая выгода до 150 000 ₽</span>
+                      <span class="tag">Гарантия 2 года</span>
+                      <span class="tag">Передача аккаунта</span>
+                      <span class="tag">18.6 кВт/ч/100 км</span>
+                    </div>
+                    <div class="price_lists">
+                      <div class="price_left">
+                        <span class="new_price">от 6 000 000 ₽</span>
+                        <span class="old_price">7 500 000 ₽</span>
+                      </div>
+                      <div class="info_price">
+                        <span>Смотреть основные хар-ки</span>
+                        <div class="infos">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="22"
+                            height="22"
+                            viewBox="0 0 22 22"
+                            fill="none"
+                          >
+                            <path
+                              d="M11 21C16.5228 21 21 16.5228 21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21Z"
+                              stroke="#0D0D0D"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M11 15V11M11 7H11.01"
+                              stroke="#0D0D0D"
+                              stroke-width="1.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="button_lists">
+                    <a href="#" class="button black open_modal_2"
+                      >Получить предложение
+                    </a>
+                    <a
+                      href="/assets/images/model_img4.png"
+                      class="button"
+                      data-fancybox="image6"
+                      >Записаться на тест-драйв</a
+                    >
                   </div>
                 </div>
               </div>
@@ -1526,7 +2120,6 @@
                 </a>
               </div>
             </div>
-
             <div class="qr-section">
               <p class="qr-caption">ОНЛАЙН КАТАЛОГ В ТЕЛЕГРАМЕ</p>
               <img
@@ -1534,9 +2127,11 @@
                 alt="QR code"
                 class="qr-code"
               />
-              <button class="button black">Перейти в Каталог</button>
+              <button class="button black">
+                <span class="desctop">Перейти в Каталог</span
+                ><span class="mobile">Перейти в онлайн каталог в телеграм</span>
+              </button>
             </div>
-
             <div class="rating">
               <div class="rating_content">
                 <div class="stars">
@@ -1553,7 +2148,7 @@
           </div>
         </section>
         <!-- offer -->
-        <section class="offer">
+        <section class="offer" id="offer">
           <div class="container">
             <div class="offer_img">
               <img src="assets/images/offer_im1.png" alt="" />
@@ -1590,7 +2185,7 @@
           </div>
         </section>
         <!-- forms -->
-        <section class="forms">
+        <section class="forms" id="forms">
           <div class="container">
             <div class="forms_img">
               <img src="assets/images/forms_img.png" alt="" />
@@ -1605,69 +2200,62 @@
               </div>
               <div class="form_content">
                 <div class="form_inputs">
-                  <div class="custom-select-wrapper">
-                    <div class="custom-select" data-input-id="brandInput">
-                      <div class="select_header">
-                        <div class="select-trigger">Выберите марку</div>
-                        <div class="select_header_right">
-                          <span>Марка авто</span>
-                          <img src="assets/images/select_arrow.svg" alt="" />
-                        </div>
-                      </div>
-                      <div class="options">
-                        <div class="option" data-value="Toyota">Toyota</div>
-                        <div class="option" data-value="BMW">BMW</div>
-                        <div class="option" data-value="Kia">Kia</div>
-                        <div class="option" data-value="Suzuki">Suzuki</div>
-                        <div class="option" data-value="Nissan">Nissan</div>
-                      </div>
+                  <div class="custom-select-wrapper slimSelect">
+                    <select
+                      name="car_model"
+                      id=""
+                      class="car_select select_header"
+                    >
+                      <option value="Выберите марку">Выберите марку</option>
+                      <option value="Kia">Kia</option>
+                      <option value="Suzuki">Suzuki</option>
+                      <option value="">BMW</option>
+                      <option value="">Zeekr</option>
+                      <option value="">Kia</option>
+                    </select>
+                    <div class="select_header_right">
+                      <span>Марка авто</span>
+                      <img src="assets/images/select_arrow.svg" alt="" />
                     </div>
-                    <input type="hidden" name="car_brand" id="brandInput" />
                   </div>
-                  <!-- Select #2 -->
-                  <div class="custom-select-wrapper">
-                    <div class="custom-select" data-input-id="modelInput">
-                      <div class="select_header">
-                        <div class="select-trigger">Выберите модель</div>
-                        <div class="select_header_right">
-                          <span>Модель</span>
-                          <img src="assets/images/select_arrow.svg" alt="" />
-                        </div>
-                      </div>
-                      <div class="options">
-                        <div class="option" data-value="RAV4">RAV 4</div>
-                        <div class="option" data-value="Camry">Camry</div>
-                        <div class="option" data-value="Highlander">
-                          Highlander
-                        </div>
-                        <div class="option" data-value="Prius">Prius</div>
-                        <div class="option" data-value="CorollaCross">
-                          Corolla Cross
-                        </div>
-                      </div>
+                  <div class="custom-select-wrapper slimSelect">
+                    <select
+                      name="car_model"
+                      id=""
+                      class="car_select select_header"
+                    >
+                      <option value="Выберите модель">Выберите модель</option>
+                      <option value="RAV 4">RAV 4</option>
+                      <option value="Camry">Camry</option>
+                      <option value="Highlander">Highlander</option>
+                      <option value="Prius">Prius</option>
+                      <option value="CorollaCross">Corolla Cross</option>
+                    </select>
+                    <div class="select_header_right">
+                      <span>Модель</span>
+                      <img src="assets/images/select_arrow.svg" alt="" />
                     </div>
-                    <input type="hidden" name="car_model" id="modelInput" />
                   </div>
-                  <!-- Select #4 -->
-                  <div class="custom-select-wrapper">
-                    <div class="custom-select" data-input-id="yearInput">
-                      <div class="select_header">
-                        <div class="select-trigger">Выберите год выпуска</div>
-                        <div class="select_header_right">
-                          <span>Год выпуска</span>
-                          <img src="assets/images/select_arrow.svg" alt="" />
-                        </div>
-                      </div>
-                      <div class="options">
-                        <div class="option" data-value="2020">2020</div>
-                        <div class="option" data-value="2021">2021</div>
-                        <div class="option" data-value="2022">2022</div>
-                        <div class="option" data-value="2023">2023</div>
-                        <div class="option" data-value="2024">2024</div>
-                        <div class="option" data-value="2025">2025</div>
-                      </div>
+                  <div class="custom-select-wrapper slimSelect">
+                    <select
+                      name="car_model"
+                      id=""
+                      class="car_select select_header"
+                    >
+                      <option value="Выберите год выпуска">
+                        Выберите год выпуска
+                      </option>
+                      <option value="2020">2020</option>
+                      <option value="2021">2021</option>
+                      <option value="2022">2022</option>
+                      <option value="2023">2023</option>
+                      <option value="2024">2024</option>
+                      <option value="2025">2025</option>
+                    </select>
+                    <div class="select_header_right">
+                      <span>Год выпуска</span>
+                      <img src="assets/images/select_arrow.svg" alt="" />
                     </div>
-                    <input type="hidden" name="car_year" id="yearInput" />
                   </div>
                   <div class="select_header input">
                     <input class="input" placeholder="+7..." type="tel" />
@@ -1677,7 +2265,7 @@
                   </div>
                 </div>
                 <div class="form_bottom">
-                  <button class="button black">Подать заявку</button>
+                  <button class="button black">Оставить заявку</button>
 
                   <label>
                     <span class="custom_checkbox">
@@ -1686,7 +2274,8 @@
                     </span>
                     <p>
                       Отправив форму путём нажатия на кнопку, я подтверждаю, что
-                      ознакомлен с политикой конфиденциальности сайта и даю
+                      ознакомлен с
+                      <a href="">политикой конфиденциальности</a> сайта и даю
                       согласие на обработку моих персональных данных.
                     </p>
                   </label>
@@ -1696,7 +2285,7 @@
           </div>
         </section>
         <!-- contact -->
-        <section class="contact">
+        <section class="contact" id="contact">
           <div class="container">
             <div class="contact_info">
               <h2 class="section_title">Контакты</h2>
@@ -1752,7 +2341,12 @@
               <div class="logo">
                 <img src="assets/images/logos.png" alt="" />
               </div>
-              <img src="assets/images/map.png" alt="" class="map_img" />
+              <script
+                type="text/javascript"
+                charset="utf-8"
+                async
+                src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af02a7c8f6264a6330bf8f02fae76063ae15f72dad91f92bedf6e8d2154d74db0&amp;width=100%&amp;height=600&amp;lang=ru_RU&amp;scroll=false"
+              ></script>
             </div>
           </div>
         </section>
@@ -1845,10 +2439,10 @@
                 <div class="footer_item_component">
                   <h4>Мы онлайн</h4>
                   <ul>
-                    <li><a href="#">Модельный ряд</a></li>
-                    <li><a href="#">Акции</a></li>
-                    <li><a href="#">Трейд-ин</a></li>
-                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#models">Модельный ряд</a></li>
+                    <li><a href="#offer">Акции</a></li>
+                    <li><a href="#forms">Трейд-ин</a></li>
+                    <li><a href="#contact">Контакты</a></li>
                   </ul>
                 </div>
               </div>
@@ -1891,10 +2485,10 @@
                 <div class="footer_item_component">
                   <h4>Мы онлайн</h4>
                   <ul>
-                    <li><a href="#">Модельный ряд</a></li>
-                    <li><a href="#">Акции</a></li>
-                    <li><a href="#">Трейд-ин</a></li>
-                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#models">Модельный ряд</a></li>
+                    <li><a href="#offer">Акции</a></li>
+                    <li><a href="#forms">Трейд-ин</a></li>
+                    <li><a href="#contact">Контакты</a></li>
                   </ul>
                 </div>
               </div>
@@ -2028,7 +2622,6 @@
                     class="input"
                     placeholder="ФИО"
                     type="text"
-                    maxlength="18"
                     autocomplete="off"
                   />
                   <div class="select_header_right">
@@ -2156,69 +2749,64 @@
             </div>
             <div class="form_content">
               <div class="form_inputs">
-                <div class="custom-select-wrapper">
-                  <div class="custom-select" data-input-id="brandInput">
-                    <div class="select_header">
-                      <div class="select-trigger">Выберите марку</div>
-                      <div class="select_header_right">
-                        <span>Марка авто</span>
-                        <img src="assets/images/select_arrow.svg" alt="" />
-                      </div>
-                    </div>
-                    <div class="options">
-                      <div class="option" data-value="Toyota">Toyota</div>
-                      <div class="option" data-value="BMW">BMW</div>
-                      <div class="option" data-value="Kia">Kia</div>
-                      <div class="option" data-value="Suzuki">Suzuki</div>
-                      <div class="option" data-value="Nissan">Nissan</div>
-                    </div>
+                <div class="custom-select-wrapper slimSelect">
+                  <select
+                    name="car_model"
+                    id=""
+                    class="car_select select_header"
+                  >
+                    <option value="Выберите марку">Выберите марку</option>
+                    <option value="Kia">Kia</option>
+                    <option value="Suzuki">Suzuki</option>
+                    <option value="">BMW</option>
+                    <option value="">Zeekr</option>
+                    <option value="">Kia</option>
+                  </select>
+                  <div class="select_header_right">
+                    <span>Марка авто</span>
+                    <img src="assets/images/select_arrow.svg" alt="" />
                   </div>
-                  <input type="hidden" name="car_brand" id="brandInput" />
                 </div>
                 <!-- Select #2 -->
-                <div class="custom-select-wrapper">
-                  <div class="custom-select" data-input-id="modelInput">
-                    <div class="select_header">
-                      <div class="select-trigger">Выберите модель</div>
-                      <div class="select_header_right">
-                        <span>Модель</span>
-                        <img src="assets/images/select_arrow.svg" alt="" />
-                      </div>
-                    </div>
-                    <div class="options">
-                      <div class="option" data-value="RAV4">RAV 4</div>
-                      <div class="option" data-value="Camry">Camry</div>
-                      <div class="option" data-value="Highlander">
-                        Highlander
-                      </div>
-                      <div class="option" data-value="Prius">Prius</div>
-                      <div class="option" data-value="CorollaCross">
-                        Corolla Cross
-                      </div>
-                    </div>
+                <div class="custom-select-wrapper slimSelect">
+                  <select
+                    name="car_model"
+                    id=""
+                    class="car_select select_header"
+                  >
+                    <option value="Выберите модель">Выберите модель</option>
+                    <option value="RAV 4">RAV 4</option>
+                    <option value="Camry">Camry</option>
+                    <option value="Highlander">Highlander</option>
+                    <option value="Prius">Prius</option>
+                    <option value="CorollaCross">Corolla Cross</option>
+                  </select>
+                  <div class="select_header_right">
+                    <span>Модель</span>
+                    <img src="assets/images/select_arrow.svg" alt="" />
                   </div>
-                  <input type="hidden" name="car_model" id="modelInput" />
                 </div>
                 <!-- Select #4 -->
-                <div class="custom-select-wrapper">
-                  <div class="custom-select" data-input-id="yearInput">
-                    <div class="select_header">
-                      <div class="select-trigger">Выберите год выпуска</div>
-                      <div class="select_header_right">
-                        <span>Год выпуска</span>
-                        <img src="assets/images/select_arrow.svg" alt="" />
-                      </div>
-                    </div>
-                    <div class="options">
-                      <div class="option" data-value="2020">2020</div>
-                      <div class="option" data-value="2021">2021</div>
-                      <div class="option" data-value="2022">2022</div>
-                      <div class="option" data-value="2023">2023</div>
-                      <div class="option" data-value="2024">2024</div>
-                      <div class="option" data-value="2025">2025</div>
-                    </div>
+                <div class="custom-select-wrapper slimSelect">
+                  <select
+                    name="car_model"
+                    id=""
+                    class="car_select select_header"
+                  >
+                    <option value="Выберите год выпуска">
+                      Выберите год выпуска
+                    </option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                  </select>
+                  <div class="select_header_right">
+                    <span>Год выпуска</span>
+                    <img src="assets/images/select_arrow.svg" alt="" />
                   </div>
-                  <input type="hidden" name="car_year" id="yearInput" />
                 </div>
                 <div class="select_header input">
                   <input class="input" placeholder="+7..." type="tel" />
@@ -2287,6 +2875,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/0.9.0/jquery.mask.min.js"></script>
+    <script src="https://unpkg.com/slim-select@latest/dist/slimselect.min.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

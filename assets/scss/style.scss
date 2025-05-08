@@ -17,6 +17,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 body {
   font-family: "Montserrat", sans-serif;
@@ -118,4 +119,96 @@ body {
 
 .fancybox__container {
   z-index: 100000 !important;
+}
+.ss-main:focus {
+  box-shadow: 0 0 0;
+}
+.ss-search {
+  display: none !important;
+}
+.ss-list {
+  padding: 10px 10px 10px 0px;
+  background: #fff;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  border: 0 !important;
+  overflow-y: auto;
+  max-height: 190px;
+  &::-webkit-scrollbar-thumb {
+    border-radius: 30px;
+    background: #817b77;
+    width: 10px;
+  }
+  &::-webkit-scrollbar {
+    background: #d2c9c4;
+    width: 6px;
+    border-radius: 100px;
+  }
+}
+.ss-main .ss-values {
+  margin-left: -3px;
+}
+.ss-option {
+  padding: 10px 16px;
+  font-family: "Segoe UI" !important;
+  font-size: 16px !important;
+  font-style: normal;
+  font-weight: 400;
+  color: #0d0d0d !important;
+  &:hover {
+    background: #f3efec !important;
+  }
+
+  .ss-single {
+    font-family: "Segoe UI" !important;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    margin-left: -4px !important;
+    margin: auto 0px auto 0 !important;
+  }
+  &.ss-selected {
+    position: relative;
+    background: #fff !important;
+    color: #0d0d0d;
+    &::after {
+      content: "";
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'><path d='M3 8.11111L6.75 12L13 5' stroke='%230D0D0D' stroke-width='2' stroke-linecap='square'/></svg>");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    &:hover {
+      background: #f3efec !important;
+    }
+  }
+}
+
+.slimSelect {
+  position: relative;
+  .ss-single {
+    padding-bottom: 18px;
+    @media (max-width: 992px) {
+      padding-bottom: 0px;
+      font-size: 14px;
+    }
+  }
+  .select_header {
+    @media (max-width: 992px) {
+      padding-bottom: 0;
+    }
+  }
+  .select_header_right {
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    background: #fff;
+  }
+  .ss-arrow {
+    display: none !important;
+  }
 }

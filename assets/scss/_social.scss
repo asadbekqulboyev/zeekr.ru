@@ -56,7 +56,7 @@
         left: 0;
         right: 0;
         margin: auto;
-        width: 52%;
+        width: 50%;
       }
     }
     &::after {
@@ -119,6 +119,9 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      &:nth-child(2) {
+        order: -1;
+      }
     }
   }
 
@@ -145,8 +148,18 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    @media (max-width: 768px) {
+      width: 100%;
+      align-items: center;
+    }
     .button {
       margin-top: 10px;
+      @media (max-width: 768px) {
+        margin-top: 15px;
+        width: 100%;
+        padding: 14px !important;
+        display: block;
+      }
     }
   }
 
@@ -181,6 +194,17 @@
     @media (max-width: 768px) {
       margin-top: 0;
     }
+    .desctop {
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+    .mobile {
+      display: none;
+      @media (max-width: 768px) {
+        display: block;
+      }
+    }
   }
 
   /* Rating section */
@@ -200,12 +224,17 @@
     @media (max-width: 768px) {
       padding-top: 20px;
       padding-bottom: 20px;
+      margin-top: 10px;
     }
     .rating_content {
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
       width: 487px;
+      @media (max-width: 768px) {
+        width: 100%;
+        align-items: center;
+      }
     }
     &::before,
     &::after {

@@ -1,202 +1,99 @@
-$(document).ready(function () {
-  $(".header__hamburger").on("click", function () {
-    $(".header__hamburger").toggleClass("open");
-    $(".header__mobile").toggleClass("open");
+window.addEventListener("load", () => {
+  // header
+  document
+    .querySelector(".header__hamburger")
+    .addEventListener("click", function () {
+      document.querySelector(".header__hamburger").classList.toggle("open");
+      document.querySelector(".header__mobile").classList.toggle("open");
+      document.querySelector(".exit_menu").classList.toggle("open");
+    });
+
+  document.querySelector(".exit_menu").addEventListener("click", function () {
+    document.querySelector(".header__hamburger").classList.remove("open");
+    document.querySelector(".header__mobile").classList.remove("open");
+    document.querySelector(".exit_menu").classList.remove("open");
   });
-  $(".exit_menu").on("click", function () {
-    $(".header__hamburger").removeClass("open");
-    $(".header__mobile").removeClass("open");
-  });
+  // hero
   let swipers = new Swiper(".hero_slider", {
     navigation: {
-      prevEl: ".hero-button-next",
-      nextEl: ".hero-button-prev",
+      prevEl: document.querySelector(".hero-button-next"),
+      nextEl: document.querySelector(".hero-button-prev"),
     },
     pagination: {
-      el: ".hero_pagination",
+      el: document.querySelector(".hero_pagination"),
       type: "bullets",
       clickable: true,
     },
   });
-  // function customSelect() {
-  //   $(".models .select_header").on("click", function () {
-  //     const $parent = $(this).closest(".models .custom_select");
-  //     $(".models .custom_select").not($parent).removeClass("open");
-  //     $parent.toggleClass("open");
-  //   });
-  //   $(".models .select_item").on("click", function (e) {
-  //     e.preventDefault();
-
-  //     const selected = $(this).text();
-  //     const $select = $(this).closest(".models .custom_select");
-
-  //     $select.find(".models .select_item").removeClass("active");
-  //     $(this).addClass("active");
-
-  //     $select.find(".models .select_current").text(selected);
-  //     $select.removeClass("open");
-  //   });
-
-  //   $(document).on("click", function (e) {
-  //     if (!$(e.target).closest(".models .custom_select").length) {
-  //       $(".models .custom_select").removeClass("open");
-  //     }
-  //   });
-  //   $(".models .models_filter_reset").on("click", function () {
-  //     $(".models .custom_select").each(function () {
-  //       const $select = $(this);
-  //       const $firstItem = $select.find(".models .select_item").first();
-
-  //       // Matnni qaytarish
-  //       $select.find(".models .select_current").text($firstItem.text());
-
-  //       // Active ni tozalash va birinchi elementga qo'yish
-  //       $select.find(".models .select_item").removeClass("active");
-  //       $firstItem.addClass("active");
-  //     });
-  //   });
-  // }
-  // customSelect();
-  // function initCustomSelect() {
-  //   $(".forms .select_header")
-  //     .off("click")
-  //     .on("click", function () {
-  //       $(this).css("color", "#0D0D0D");
-  //       const $select = $(this).closest(".forms .custom-select");
-  //       $(".forms .custom-select")
-  //         .not($select)
-  //         .removeClass("open")
-  //         .find(".options")
-  //         .hide(); // Boshqalarni yop
-  //       $select.toggleClass("open");
-  //       $select.find(".options").toggle();
-  //     });
-
-  //   $(".option")
-  //     .off("click")
-  //     .on("click", function () {
-  //       const $this = $(this);
-  //       const value = $this.data("value");
-  //       const label = $this.text();
-  //       $(this).css("color", "#0D0D0D");
-  //       const $select = $this.closest(".forms .custom-select");
-  //       const inputId = $select.data("input-id");
-
-  //       $select.find(".forms .select-trigger").text(label);
-  //       $select.find(".forms .option").removeClass("selected");
-  //       $this.addClass("selected");
-  //       $select.removeClass("open");
-  //       $select.find(".options").hide();
-
-  //       $("#" + inputId).val(value);
-  //     });
-
-  //   $(document)
-  //     .off("click.selectClose")
-  //     .on("click.selectClose", function (e) {
-  //       if (!$(e.target).closest(".forms .custom-select").length) {
-  //         $(".forms .custom-select").removeClass("open");
-  //         $(".forms .options").hide();
-  //       }
-  //     });
-  // }
-  function initCustomSelects() {
-    // MODELS SELECT
-    $(".models .select_header")
-      .off("click")
-      .on("click", function () {
-        const $parent = $(this).closest(".custom_select");
-        $(".models .custom_select").not($parent).removeClass("open");
-        $parent.toggleClass("open");
+  // mask
+  const telInputs = document.querySelectorAll('input[type="tel"]');
+  telInputs.forEach(function (input) {
+    $(input).mask("+7 (999) 999-99-99");
+  });
+  // Обработка кнопок закрытия модального окна
+  document.querySelectorAll(".close_modal").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault(); // предотвращает переход по ссылке
+      document.querySelectorAll(".modal").forEach((modal) => {
+        fadeOut(modal, 200); // скрыть все модальные окна
       });
+    });
+  });
 
-    $(".models .select_item")
-      .off("click")
-      .on("click", function (e) {
-        e.preventDefault();
-        const selected = $(this).text();
-        const $select = $(this).closest(".custom_select");
+  // Обработка кнопок отправки в modal_1
+  document.querySelectorAll(".modal_1 button, .modal_1 a").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault(); // предотвращает действие по умолчанию
+      document
+        .querySelectorAll(".modal")
+        .forEach((modal) => fadeOut(modal, 200)); // скрыть все модальные окна
+      const thanks1 = document.querySelector(".modal.thanks.thanks_1");
+      if (thanks1) fadeIn(thanks1, 200); // показать окно благодарности 1
+    });
+  });
 
-        $select.find(".select_item").removeClass("active");
-        $(this).addClass("active");
+  // Обработка кнопок отправки в modal_2
+  document.querySelectorAll(".modal_2 button, .modal_2 a").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault();
+      document
+        .querySelectorAll(".modal")
+        .forEach((modal) => fadeOut(modal, 200));
+      const thanks2 = document.querySelector(".modal.thanks.thanks_2");
+      if (thanks2) fadeIn(thanks2, 200); // показать окно благодарности 2
+    });
+  });
 
-        $select.find(".select_current").text(selected);
-        $select.removeClass("open");
-      });
+  // Открытие modal_1
+  document.querySelectorAll(".open_modal").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const modal1 = document.querySelector(".modal_1");
+      if (modal1) fadeIn(modal1, 200); // показать modal_1
+    });
+  });
 
-    $(".models .models_filter_reset")
-      .off("click")
-      .on("click", function () {
-        $(".models .custom_select").each(function () {
-          const $select = $(this);
-          const $firstItem = $select.find(".select_item").first();
-          $select.find(".select_current").text($firstItem.text());
-          $select.find(".select_item").removeClass("active");
-          $firstItem.addClass("active");
-        });
-      });
+  // Открытие modal_2
+  document.querySelectorAll(".open_modal_2").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const modal2 = document.querySelector(".modal_2");
+      if (modal2) fadeIn(modal2, 200); // показать modal_2
+    });
+  });
 
-    // FORMS SELECT
-    $(".forms .select_header")
-      .off("click")
-      .on("click", function () {
-        $(this).css("color", "#0D0D0D");
-        const $select = $(this).closest(".custom-select");
-        $(".forms .custom-select")
-          .not($select)
-          .removeClass("open")
-          .find(".options")
-          .hide();
-        $select.toggleClass("open");
-        $select.find(".options").toggle();
-      });
-
-    $(".forms .option")
-      .off("click")
-      .on("click", function () {
-        const $this = $(this);
-        const value = $this.data("value");
-        const label = $this.text();
-        $this.css("color", "#0D0D0D");
-        const $select = $this.closest(".custom-select");
-        const inputId = $select.data("input-id");
-
-        $select.find(".select-trigger").text(label);
-        $select.find(".option").removeClass("selected");
-        $this.addClass("selected");
-        $select.removeClass("open");
-        $select.find(".options").hide();
-
-        $("#" + inputId).val(value);
-      });
-
-    // DOCUMENT CLICK – UNIVERSAL YOPISH
-    $(document)
-      .off("click.globalSelectClose")
-      .on("click.globalSelectClose", function (e) {
-        if (
-          !$(e.target).closest(".models .custom_select, .forms .custom-select")
-            .length
-        ) {
-          $(".models .custom_select").removeClass("open");
-          $(".forms .custom-select").removeClass("open");
-          $(".forms .options").hide();
-        }
-      });
-  }
-  initCustomSelects();
-  $('input[type="tel"]').mask("+7 (999) 999-99-99");
-
+  // models
   function SlideModels() {
-    $(".models_item").each(function () {
-      const $this = $(this);
+    const modelItems = document.querySelectorAll(".models_item");
 
+    modelItems.forEach((item) => {
       const isMobile = window.innerWidth < 768;
 
-      // Faqat desktopda thumbs kerak
+      const thumbsEl = item.querySelector(".models_gallery_pagination");
       let thumbsSwiper = null;
-      if (!isMobile) {
-        thumbsSwiper = new Swiper($this.find(".modesl_gallery_pagination")[0], {
+
+      if (!isMobile && thumbsEl) {
+        thumbsSwiper = new Swiper(thumbsEl, {
           spaceBetween: 5,
           slidesPerView: 6,
           freeMode: true,
@@ -204,105 +101,241 @@ $(document).ready(function () {
         });
       }
 
-      const mainSwiper = new Swiper($this.find(".models_img")[0], {
-        spaceBetween: 10,
-        loop: true,
-        navigation: {
-          nextEl: $this.find(".models_next")[0],
-          prevEl: $this.find(".models_prev")[0],
-        },
-        // Mobilda pagination, desktopda yo‘q
-        pagination: isMobile
-          ? {
-              el: $this.find(".models_pagination")[0],
-              clickable: true,
-            }
-          : false,
-        // Desktopda thumbs, mobilda yo‘q
-        thumbs:
-          !isMobile && thumbsSwiper
-            ? {
-                swiper: thumbsSwiper,
-              }
-            : undefined,
-        on: {
-          init: function () {
-            updateContentBtnHref();
-          },
-          slideChangeTransitionEnd: function () {
-            updateContentBtnHref();
-          },
-        },
-      });
+      const mainSwiperEl = item.querySelector(".models_img");
+      const nextEl = item.querySelector(".models_next");
+      const prevEl = item.querySelector(".models_prev");
+      const paginationEl = item.querySelector(".models_pagination");
+      const contentBtn = item.querySelector(".content_btn");
 
-      function updateContentBtnHref() {
-        const currentSrc = $this
-          .find(".models_img .swiper-slide-active img")
-          .attr("src");
-        $this.find(".content_btn").attr("href", currentSrc);
-      }
+      // Swiper yaratishni kechiktirib, thumbsSwiper tayyor bo‘lganidan keyin bajariladi
+      setTimeout(() => {
+        const mainSwiper = new Swiper(mainSwiperEl, {
+          spaceBetween: 10,
+          loop: true,
+          navigation: {
+            nextEl: nextEl,
+            prevEl: prevEl,
+          },
+          pagination:
+            isMobile && paginationEl
+              ? {
+                  el: paginationEl,
+                  clickable: true,
+                }
+              : false,
+          thumbs:
+            !isMobile && thumbsSwiper
+              ? {
+                  swiper: thumbsSwiper,
+                }
+              : undefined,
+          on: {
+            init: updateContentBtnHref,
+            slideChangeTransitionEnd: updateContentBtnHref,
+          },
+        });
+
+        function updateContentBtnHref() {
+          const activeImg = item.querySelector(
+            ".models_img .swiper-slide-active img"
+          );
+          if (activeImg && contentBtn) {
+            const src = activeImg.getAttribute("src");
+            contentBtn.setAttribute("href", src);
+          }
+        }
+      }, 0); // Keyingi callstackda bajariladi
     });
   }
-
   SlideModels();
 
-  $(".models_item").each(function () {
-    const item = $(this);
+  // Функция для плавного появления элемента (fadeIn)
+  function fadeIn(element, duration = 200) {
+    element.style.opacity = 0;
+    element.style.display = "block";
 
-    item.find(".info_price").on("click", function () {
-      $(".models_item .characteristic_content").fadeOut();
-      item.find(".characteristic_content").fadeIn();
-    });
+    let startTime = performance.now();
 
-    item.find(".exit_caracteristic").on("click", function () {
-      item.find(".characteristic_content").fadeOut();
+    function animate(time) {
+      let elapsed = time - startTime;
+      let progress = Math.min(elapsed / duration, 1);
+      element.style.opacity = progress;
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  // Функция для плавного скрытия элемента (fadeOut)
+  function fadeOut(element, duration = 200) {
+    let startOpacity = 1;
+    let startTime = performance.now();
+
+    function animate(time) {
+      let elapsed = time - startTime;
+      let progress = Math.min(elapsed / duration, 1);
+      element.style.opacity = startOpacity - progress;
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        element.style.display = "none";
+      }
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  // Обработка кнопок закрытия модального окна
+  document.querySelectorAll(".close_modal").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault(); // предотвращает переход по ссылке
+      document.querySelectorAll(".modal").forEach((modal) => {
+        fadeOut(modal, 200); // скрыть все модальные окна
+      });
     });
   });
 
-  $(".characteristic_content").each(function () {
-    const $block = $(this);
+  // Обработка кнопок отправки в modal_1
+  document.querySelectorAll(".modal_1 button, .modal_1 a").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault(); // предотвращает действие по умолчанию
+      document
+        .querySelectorAll(".modal")
+        .forEach((modal) => fadeOut(modal, 200)); // скрыть все модальные окна
+      const thanks1 = document.querySelector(".modal.thanks.thanks_1");
+      if (thanks1) fadeIn(thanks1, 200); // показать окно благодарности 1
+    });
+  });
 
-    $block.find(".tab").on("click", function () {
-      const selectedTab = $(this).data("tab");
+  // Обработка кнопок отправки в modal_2
+  document.querySelectorAll(".modal_2 button, .modal_2 a").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault();
+      document
+        .querySelectorAll(".modal")
+        .forEach((modal) => fadeOut(modal, 200));
+      const thanks2 = document.querySelector(".modal.thanks.thanks_2");
+      if (thanks2) fadeIn(thanks2, 200); // показать окно благодарности 2
+    });
+  });
 
-      // Aktiv tabni yangilash
-      $block.find(".tab").removeClass("active");
-      $(this).addClass("active");
+  // Открытие modal_1
+  document.querySelectorAll(".open_modal").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const modal1 = document.querySelector(".modal_1");
+      if (modal1) fadeIn(modal1, 200); // показать modal_1
+    });
+  });
 
-      // Kontentlarni almashtirish
-      const $current = $block.find(".tab-content:visible");
-      const $target = $block.find(`#${selectedTab}`);
+  // Открытие modal_2
+  document.querySelectorAll(".open_modal_2").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const modal2 = document.querySelector(".modal_2");
+      if (modal2) fadeIn(modal2, 200); // показать modal_2
+    });
+  });
 
-      if (!$target.is(":visible")) {
-        $current.fadeOut(200, function () {
-          $target.fadeIn(200);
+  // models item open
+  let models_item_btn = document.querySelector(".all_content");
+  models_item_btn.addEventListener("click", function (e) {
+    e.preventDefault();
+    this.style.display = "none";
+    document.querySelectorAll(".models_item").forEach((item) => {
+      item.style.display = "block";
+    });
+  });
+  //
+  document.querySelectorAll(".models_item").forEach(function (item) {
+    const infoPrice = item.querySelector(".info_price");
+    const exitBtn = item.querySelector(".exit_caracteristic");
+    const content = item.querySelector(".characteristic_content");
+
+    if (infoPrice) {
+      infoPrice.addEventListener("click", function () {
+        // Boshqa barcha .characteristic_content'larni yopamiz
+        document
+          .querySelectorAll(".models_item .characteristic_content")
+          .forEach(function (el) {
+            if (el !== content) fadeOut(el);
+          });
+
+        // Agar content allaqachon ochiq bo‘lmasa, ochamiz
+        if (content.style.display !== "block") {
+          fadeIn(content);
+        }
+      });
+    }
+
+    if (exitBtn) {
+      exitBtn.addEventListener("click", function () {
+        fadeOut(content);
+      });
+    }
+  });
+
+  // Tabs
+  document
+    .querySelectorAll(".characteristic_content")
+    .forEach(function (block) {
+      const tabs = block.querySelectorAll(".tab");
+      const contents = block.querySelectorAll(".tab-content");
+      const exitBtn = block.querySelector(".exit_caracteristic");
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          const selectedId = tab.dataset.tab;
+          const target = block.querySelector(`#${selectedId}`);
+
+          // Aktiv tabni yangilaymiz
+          tabs.forEach((t) => t.classList.remove("active"));
+          tab.classList.add("active");
+
+          // Kontentlarni almashtiramiz
+          contents.forEach(function (content) {
+            if (content === target) {
+              fadeIn(content);
+            } else {
+              fadeOut(content);
+            }
+          });
+        });
+      });
+      if (exitBtn) {
+        exitBtn.addEventListener("click", function () {
+          fadeOut(block);
         });
       }
     });
 
-    // Yopish tugmasi
-    $block.find(".exit_caracteristic").on("click", function () {
-      $block.fadeOut(200);
+  document.querySelectorAll(".car_select").forEach((selectEl) => {
+    const slim = new SlimSelect({
+      select: selectEl,
+    });
+    const wrapper = selectEl.closest(".custom-select-wrapper");
+    const rightEl = wrapper.querySelector(".select_header_right");
+    rightEl.addEventListener("click", (e) => {
+      e.stopPropagation();
+      slim.dropdown.isOpen ? slim.close() : slim.open();
     });
   });
-  $(".close_modal").on("click", function () {
-    $(".modal").fadeOut(200);
-  });
-  $(".modal_1 button").click(function (e) {
-    e.preventDefault();
-    $(".modal").fadeOut(200);
-    $(".modal.thanks.thanks_1").fadeIn(200);
-  });
 
-  $(".modal_2 button").click(function (e) {
-    e.preventDefault();
-    $(".modal").fadeOut(200);
-    $(".modal.thanks.thanks_2").fadeIn(200);
+  const slimSelects = [];
+
+  document.querySelectorAll(".filter_select").forEach((el) => {
+    const instance = new SlimSelect({ select: el });
+    slimSelects.push(instance);
   });
-  $(".open_modal").click(function () {
-    $(".modal_1").fadeIn(200);
-  });
-  $(".open_modal_2").click(function () {
-    $(".modal_2").fadeIn(200);
-  });
+  document
+    .querySelector(".models_filter_reset")
+    .addEventListener("click", function () {
+      slimSelects.forEach((slim) => {
+        slim.setSelected(""); // yoki `slim.set('default_value')`
+      });
+    });
 });

@@ -9,6 +9,9 @@
   padding: 20px 15px;
   overflow-y: auto;
   display: none;
+
+  z-index: 1212121;
+
   &::-webkit-scrollbar {
     display: none;
   }
