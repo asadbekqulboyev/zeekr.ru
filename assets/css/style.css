@@ -1388,7 +1388,7 @@
   flex-direction: column;
   gap: 20px;
   padding: 10px;
-  max-height: 364px;
+  max-height: 400px;
   overflow-y: auto;
 }
 @media (max-width: 768px) {
@@ -1441,6 +1441,10 @@
   .models_item .models_item_body .characteristic_content .tab-content ul li {
     font-size: 14px;
   }
+}
+.models_item .models_item_body .characteristic_content .tab-content:nth-child(2) .info-table {
+  height: 100%;
+  max-height: 480px;
 }
 .models .all_content {
   color: #0d0d0d;

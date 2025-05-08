@@ -674,7 +674,7 @@
             flex-direction: column;
             gap: 20px;
             padding: 10px;
-            max-height: 364px;
+            max-height: 400px;
             overflow-y: auto;
             @media (max-width: 768px) {
               gap: 10px;
@@ -721,6 +721,12 @@
                 font-size: 14px;
               }
             }
+          }
+        }
+        .tab-content:nth-child(2) {
+          .info-table {
+            height: 100%;
+            max-height: 480px;
           }
         }
       }
